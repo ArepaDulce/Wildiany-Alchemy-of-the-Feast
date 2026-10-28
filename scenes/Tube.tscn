@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhy7cq4jwxbmr"]
+
+[ext_resource type="Script" path="res://scripts/Tube.gd" id="1_tube"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(68, 200)
+
+[node name="Tube" type="Node2D" unique_id=125075959]
+script = ExtResource("1_tube")
+block_height = 43.0
+stack_bottom_y = 88.0
+block_x = 0.0
+
+[node name="Glass" type="Polygon2D" parent="."]
+color = Color(0.16, 0.13, 0.22, 0.55)
+polygon = PackedVector2Array(-34, -80, 34, -80, 34, 120, -34, 120)
+
+[node name="Border" type="Line2D" parent="."]
+z_index = 1
+points = PackedVector2Array(-34, -80, -34, 120, 34, 120, 34, -80)
+width = 3.0
+default_color = Color(0.85, 0.76, 0.58, 1)
+
+[node name="ClickArea" type="Area2D" parent="."]
+position = Vector2(0, 20)
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+shape = SubResource("RectangleShape2D_click")

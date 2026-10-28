@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://hmhj6xegekm0"]
+
+[ext_resource type="Script" path="res://scripts/Block.gd" id="1_block"]
+
+[node name="Block" type="Node2D" unique_id=1477937740]
+script = ExtResource("1_block")
+
+[node name="Visual" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
